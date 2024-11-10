@@ -35,3 +35,75 @@ eg.1)system.out.println("hello world");
    2)int a=10
      int b=20
      system.out.println(a+b);
+
+
+
+
+
+
+
+
+>...nodejs apl...<
+
+
+create folder prac6 and open in vs
+
+go to folder and click to path and write
+cmd
+
+after opening command promt
+npm init
+enter
+enter......
+
+
+
+after this go to vs and create new file 
+index.js
+
+
+
+const express = require('express');
+const app = express();
+
+app.use(express.static('public'))
+
+app.listen(4000, () => {
+    console.log("Server is Started");
+})
+
+
+
+
+
+after that create new folder' public '
+in public create new file 
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>hello</h1>
+</body>
+
+</html>
+
+
+
+
+then go to command promt
+node index.js
+
+
+
+
+
+then go to browser and search
+localhost:4000
