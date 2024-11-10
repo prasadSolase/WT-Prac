@@ -1,1 +1,37 @@
 https://github.com/aryanmakes7204/practical_WT
+
+
+
+
+
+
+
+>...docker...<
+
+install docker
+sudo apt install docker.io
+ 
+check docker --version
+pull the docker container
+docker pull python
+
+check image like: sudo docker images
+check container : sudo docker ps
+
+
+to run a container:
+docker run --name PY -it -d python
+
+then use 
+docker ps
+for command
+
+to execute a container:
+docker exec -it PY <command>
+
+then perform the task as per the container
+eg.1)system.out.println("hello world");
+
+   2)int a=10
+     int b=20
+     system.out.println(a+b);
