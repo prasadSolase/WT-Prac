@@ -43,7 +43,7 @@ eg.1)system.out.println("hello world");
 
 
 
->...nodejs apl...<
+>...nodejs...<
 
 
 create folder prac6 and open in vs
@@ -107,3 +107,96 @@ node index.js
 
 then go to browser and search
 localhost:4000
+
+
+
+
+
+
+
+
+
+
+
+>...crud api ...<
+first install mongodb and postman
+
+
+then in cammandprompt
+1)npm i mongodb
+2)npm i express     
+
+
+create folder prac7 and open in vs
+
+go to folder and click to path and write
+cmd
+
+after opening command promt
+npm init
+enter
+enter......
+
+
+
+after this go to vs and create new file 
+index.js
+
+
+const dbConnect = require('./mongodb')
+const express = require('express');
+const { response } = require('express');
+const app = express();
+app.use(express.json())
+
+//GET API
+app.get('/getdata', async(req, res) => {
+        let result = await dbConnect();
+        result = await result.find().toArray();
+        res.send(result);
+    })
+    //POST API
+
+app.post('/insertdata', async(req, res) => {
+        let result = await dbConnect();
+        result = result.insertOne(req.body);
+        res.send("Data inserted Successfully");
+    })
+    //PUT API
+app.put('/updatedata/:name', async(req, res) => {
+    let result = await dbConnect();
+    result = await result.updateOne({ name: req.params.name }, { $set: req.body })
+    res.send("Data Updated Successfully");
+})
+
+//DELETE API
+app.delete('/deletedata/:name', async(req, res) => {
+    let result = await dbConnect();
+    result = await result.deleteOne({ name: req.params.name });
+    res.send("Data Deleted Successfully");
+
+})
+app.listen(3000);
+
+
+
+
+
+
+
+
+after that create mongodb.js
+
+
+const { MongoClient } = require('mongodb');
+const url = "mongodb://localhost:27017";
+const database = 'student';
+const Client = new MongoClient(url);
+
+const dbConnect = async() => {
+    const result = await Client.connect();
+    const db = await result.db(database);
+    return db.collection('profile');
+
+}
+module.exports = dbConnect;
