@@ -30,11 +30,11 @@ to execute a container:
 docker exec -it PY <command>
 
 then perform the task as per the container
-eg.1)system.out.println("hello world");
+eg.1)print("hello world");
 
    2)int a=10
      int b=20
-     system.out.println(a+b);
+     print(a+b);
 
 
 
