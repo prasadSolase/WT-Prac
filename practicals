@@ -49,7 +49,7 @@ eg.1)system.out.println("hello world");
 create folder prac6 and open in vs
 
 go to folder and click to path and write
-cmd
+cd
 
 after opening command promt
 npm init
